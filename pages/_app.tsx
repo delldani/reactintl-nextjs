@@ -9,7 +9,7 @@ function MyApp({ Component, pageProps }: any) {
   const router = useRouter();
   const { locale, defaultLocale, pathname } = router;
 
-  const messages = {
+  const messages: { [key: string]: { [key: string]: string } } = {
     en: {
       BASIC: "Basic sentence",
       GREETING: "Hello {name}  <strong> strong</strong>",
@@ -30,8 +30,11 @@ function MyApp({ Component, pageProps }: any) {
     },
   };
 
+  const local = locale ? locale : "hu";
+
+  const mess = messages[local.toString()];
   return (
-    <IntlProvider locale={"en"} defaultLocale={"en"} messages={messages["en"]}>
+    <IntlProvider locale={local} defaultLocale={"en"} messages={mess}>
       <Component {...pageProps} />
     </IntlProvider>
   );
