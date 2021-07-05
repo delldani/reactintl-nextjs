@@ -1,17 +1,46 @@
-import { useRouter } from "next/router";
+import React from "react";
+import {
+  FormattedMessage,
+  FormattedNumber,
+  FormattedPlural,
+  FormattedDate,
+} from "react-intl";
 
 export default function IndexPage(props: any) {
-  const router = useRouter();
-  const { locale, locales, defaultLocale } = router;
-
   return (
     <div>
-      <h1>Hello, world!</h1>
-      <p>Welcome to your internationalised page!</p>
+      <FormattedMessage
+        id="GREETING"
+        defaultMessage="Hello D!"
+        values={{
+          name: "Dani",
+          strong: (word: string) => {
+            <strong>{word}</strong>;
+          },
+        }}
+      />
       <br />
-      <p>Current locale: {locale}</p>
-      <p>Default locale: {defaultLocale}</p>
-      <p>Configured locales: {JSON.stringify(locales)}</p>
+
+      <FormattedNumber value={19} style="currency" currency="EUR" />
+      <br />
+      <FormattedPlural value={1} one="message" other="messages" />
+      <br />
+      <FormattedMessage
+        id="PLURAL"
+        defaultMessage="ez plral  :{amount, plural, =0 {no languages} one {# one language} few {# several languages} many {# lots of languages} other {# wrong format}}"
+        values={{ amount: 2 }}
+      />
+      <br />
+      <FormattedMessage id="FUNC">{(txt) => <b>{txt}</b>}</FormattedMessage>
+      <br />
+      <FormattedMessage id="SWITCH" values={{ gender: "female" }} />
+      <br />
+      <FormattedDate
+        value={new Date("2013, 03, 09")}
+        year="numeric"
+        month="long"
+        day="2-digit"
+      />
     </div>
   );
 }
