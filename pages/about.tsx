@@ -8,10 +8,15 @@ export default function About(props: any) {
   const { locale } = router;
   return (
     <div>
-      ABOUT.tsx
-      <Link href="/" locale={locale === "en" ? "hu" : "en"}>
+      <h2> ABOUT.tsx</h2>
+      <Link href="/about" locale={locale === "en" ? "hu" : "en"}>
         <button>Change language</button>
       </Link>
+      <br />
+      <Link href="/" locale={locale}>
+        <button>index page</button>
+      </Link>
+      <br />
       <br />
       <FormattedMessage
         id="BASIC"

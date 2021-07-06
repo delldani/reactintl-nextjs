@@ -5,7 +5,7 @@ import { FormattedMessage } from "react-intl";
 export const Content = (props: any) => {
   return (
     <div>
-      Ez a Content.tsx
+      <h2>Ez a Content.tsx</h2>
       <br />
       <FormattedMessage
         id="BASIC"

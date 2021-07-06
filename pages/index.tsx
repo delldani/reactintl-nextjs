@@ -14,8 +14,12 @@ export default function IndexPage(props: any) {
   const { locale, defaultLocale, pathname } = router;
   return (
     <div>
+      <h2> INDEX.tsx</h2>
       <Link href="/" locale={locale === "en" ? "hu" : "en"}>
         <button>Change language</button>
+      </Link>
+      <Link href="/about" locale={locale}>
+        <button>To about page</button>
       </Link>
       <br />
       <FormattedMessage id="BASIC" defaultMessage="Lenguage" />

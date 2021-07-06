@@ -30,7 +30,6 @@ function MyApp({ Component, pageProps }: any) {
   };
 
   const local = locale ? locale : "hu";
-  console.log(local);
   const mess = messages[local.toString()];
   return (
     <IntlProvider locale={local} defaultLocale={"hu"} messages={mess}>
