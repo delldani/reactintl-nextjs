@@ -2,7 +2,6 @@ import { IntlProvider } from "react-intl";
 import { useRouter } from "next/router";
 // import all locales through barrel file
 // import * as locales  from "../content/locale";
-import { en, hu } from "../content/locale";
 import "../styles/globals.css";
 
 function MyApp({ Component, pageProps }: any) {
@@ -11,7 +10,7 @@ function MyApp({ Component, pageProps }: any) {
 
   const messages: { [key: string]: { [key: string]: string } } = {
     en: {
-      BASIC: "Basic sentence",
+      BASIC: "ENGLISH",
       GREETING: "Hello {name}  <strong> strong</strong>",
       PLURAL:
         "This will be plural :{amount, plural, =0 {no languages} one {# one language}  other {# languages}}",
@@ -20,7 +19,7 @@ function MyApp({ Component, pageProps }: any) {
         "Switc: {gender, select,male {He} female {She} other {They} } will respond shortly.",
     },
     hu: {
-      BASIC: "Alap mondat",
+      BASIC: "MAGYAR",
       GREETING: "Szia {name} <strong> kiemelt</strong>",
       PLURAL:
         "Ez plural lesz {amount, plural, =0 {no languages} one {# egy nyelv} other {# nyelvek}}",
@@ -31,10 +30,10 @@ function MyApp({ Component, pageProps }: any) {
   };
 
   const local = locale ? locale : "hu";
-
+  console.log(local);
   const mess = messages[local.toString()];
   return (
-    <IntlProvider locale={local} defaultLocale={"en"} messages={mess}>
+    <IntlProvider locale={local} defaultLocale={"hu"} messages={mess}>
       <Component {...pageProps} />
     </IntlProvider>
   );

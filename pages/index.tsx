@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
+import { Content } from "../component/Content";
 import {
   FormattedMessage,
   FormattedNumber,
@@ -16,6 +17,8 @@ export default function IndexPage(props: any) {
       <Link href="/" locale={locale === "en" ? "hu" : "en"}>
         <button>Change language</button>
       </Link>
+      <br />
+      <FormattedMessage id="BASIC" defaultMessage="Lenguage" />
       <br />
       <FormattedMessage
         id="GREETING"
@@ -49,6 +52,7 @@ export default function IndexPage(props: any) {
         month="long"
         day="2-digit"
       />
+      <Content />
     </div>
   );
 }
