@@ -18,16 +18,7 @@ export default function About(props: any) {
       </Link>
       <br />
       <br />
-      <FormattedMessage
-        id="BASIC"
-        defaultMessage="Hello D!"
-        values={{
-          name: "Dani",
-          strong: (word: string) => {
-            <strong>{word}</strong>;
-          },
-        }}
-      />
+      <FormattedMessage id="BASIC" />
       <br />
     </div>
   );

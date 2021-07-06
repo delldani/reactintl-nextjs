@@ -29,10 +29,13 @@ function MyApp({ Component, pageProps }: any) {
     },
   };
 
-  const local = locale ? locale : "hu";
-  const mess = messages[local.toString()];
+  const mess = locale && messages[locale.toString()];
   return (
-    <IntlProvider locale={local} defaultLocale={"hu"} messages={mess}>
+    <IntlProvider
+      locale={locale || "hu"}
+      defaultLocale={"hu"}
+      messages={mess || {}}
+    >
       <Component {...pageProps} />
     </IntlProvider>
   );
