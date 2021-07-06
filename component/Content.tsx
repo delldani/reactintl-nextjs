@@ -1,20 +1,12 @@
 import React from "react";
-import Link from "next/link";
 import { useRouter } from "next/router";
 
-import {
-  FormattedMessage,
-  FormattedNumber,
-  FormattedPlural,
-  FormattedDate,
-} from "react-intl";
+import { FormattedMessage } from "react-intl";
 
 export const Content = (props: any) => {
-  const router = useRouter();
-  const { locale, defaultLocale, pathname } = router;
   return (
     <div>
-      Content.tsx
+      Ez a Content.tsx
       <br />
       <FormattedMessage
         id="BASIC"
