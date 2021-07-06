@@ -18,6 +18,7 @@ export default function IndexPage(props: any) {
       <Link href="/" locale={locale === "en" ? "hu" : "en"}>
         <button>Change language</button>
       </Link>
+      <br />
       <Link href="/about" locale={locale}>
         <button>To about page</button>
       </Link>
