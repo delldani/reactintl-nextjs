@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import {
   FormattedMessage,
   FormattedNumber,
@@ -7,8 +9,14 @@ import {
 } from "react-intl";
 
 export default function IndexPage(props: any) {
+  const router = useRouter();
+  const { locale, defaultLocale, pathname } = router;
   return (
     <div>
+      <Link href="/" locale={locale === "en" ? "hu" : "en"}>
+        <button>Change language</button>
+      </Link>
+      <br />
       <FormattedMessage
         id="GREETING"
         defaultMessage="Hello D!"
