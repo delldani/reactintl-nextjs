@@ -1,16 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
-import {
-  FormattedMessage,
-  FormattedNumber,
-  FormattedPlural,
-  FormattedDate,
-} from "react-intl";
+import { FormattedMessage } from "react-intl";
 
 export default function About(props: any) {
   const router = useRouter();
-  const { locale, defaultLocale, pathname } = router;
+  const { locale } = router;
   return (
     <div>
       ABOUT.tsx
